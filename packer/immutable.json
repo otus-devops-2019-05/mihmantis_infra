@@ -1,7 +1,7 @@
 {
     "variables": {
         "project_id": null,
-        "source_image_family": null,
+        "source_image_family": "reddit-base",
         "machine_type": "f1-micro",
         "image_description": "Baked image for reddit-app service",
         "disk_size": "10",
@@ -13,28 +13,32 @@
         {
             "type": "googlecompute",
             "project_id": "{{ user `project_id` }}",
-            "image_name": "reddit-base-{{timestamp}}",
-            "image_family": "reddit-base",
+            "image_name": "reddit-full-{{timestamp}}",
+            "image_family": "reddit-full",
             "source_image_family": "{{ user `source_image_family` }}",
             "zone": "europe-west1-b",
             "ssh_username": "appuser",
             "machine_type": "f1-micro",
             "image_description": "{{ user `image_description` }}",
-	    "disk_size": "{{ user `disk_size` }}",
-	    "disk_type": "{{ user `disk_type` }}",
-	    "network": "{{ user `network` }}",
-	    "tags": "{{ user `tags` }}"
+            "disk_size": "{{ user `disk_size` }}",
+            "disk_type": "{{ user `disk_type` }}",
+            "network": "{{ user `network` }}",
+            "tags": "{{ user `tags` }}"
         }
     ],
     "provisioners": [
         {
-            "type": "shell",
-            "script": "scripts/install_ruby.sh",
-            "execute_command": "sudo {{.Path}}"
+            "type": "file",
+            "source": "files/reddit-app.service",
+            "destination": "/tmp/reddit-app.service"
+        },
+        {
+           "type": "shell",
+           "inline": "sudo mv /tmp/reddit-app.service /lib/systemd/system/"
         },
         {
             "type": "shell",
-            "script": "scripts/install_mongodb.sh",
+            "script": "scripts/deploy.sh",
             "execute_command": "sudo {{.Path}}"
         }
     ]
