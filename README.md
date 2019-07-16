@@ -4,11 +4,15 @@ mihmantis Infra repository
 ### HW5
 
 To build image reddit-base run command:
+```
 packer build -var-file variables.json ubuntu16.json
+```
 
 ##### Extra task
 To build image reddit-full using reddit-base image run command:
+```
 packer build -var project_id=infra-xxxxx immutable.json
+```
 
 ### HW4
 
