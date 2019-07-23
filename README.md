@@ -3,10 +3,10 @@ mihmantis Infra repository
 
 ### HW6
 
-Files to build infrastracture using terraform were created
-main.tf - file with discription of infrastructer consisting of one VM and one firewall rule
-variables.tf - file with variables description with defult values
-terraform.tfvars - values for variables described in variables.tf
+Files to build infrastracture using terraform were created  
+main.tf - file with discription of infrastructer consisting of one VM and one firewall rule  
+variables.tf - file with variables description with defult values  
+terraform.tfvars - values for variables described in variables.tf  
 outputs.tf - file with output values description
 
 ##### Extra tasks
