@@ -13,7 +13,7 @@ app.tf db.tf vpc.tf used as modules in main.tf script
 
 ##### Extra tasks
 [*] Changed backend mode to remote
-In prod and stage environment backend.tf file was added to migrate from local to remote tfstate
+In prod and stage environment backend.tf file was added to migrate from local to remote tfstate  
 [**] Add service provisioning to terraform scripts
 Add provisioning steps to app and db terraform modules.
 
