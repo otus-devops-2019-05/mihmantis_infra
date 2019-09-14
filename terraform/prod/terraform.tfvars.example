@@ -1,0 +1,11 @@
+project = "infra-111111"
+
+public_key_path = "~/.ssh/appuser.pub"
+
+public_key_path1 = "~/.ssh/appuser1.pub"
+
+otus_public_key_path = "~/.ssh/id_rsa.pub"
+
+private_key_path = "~/.ssh/appuser"
+
+disk_image = "reddit-base"
