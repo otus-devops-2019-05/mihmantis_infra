@@ -1,12 +1,28 @@
 # mihmantis_infra
 mihmantis Infra repository
 
+### HW7
+
+Two environments (stage and prod) were created using terraform scripts.
+Application was split in two parts app.tf and db.tf.
+app.tf - deploying image with ruby installed
+db.tf - deploying image with mongodb
+vpc.tf - additional terraform script to deploy ssh firewall rules
+
+app.tf db.tf vpc.tf used as modules in main.tf script
+
+##### Extra tasks
+[*] Changed backend mode to remote
+In prod and stage environment backend.tf file was added to migrate from local to remote tfstate  
+[**] Add service provisioning to terraform scripts
+Add provisioning steps to app and db terraform modules.
+
 ### HW6
 
-Files to build infrastracture using terraform were created  
-main.tf - file with discription of infrastructer consisting of one VM and one firewall rule  
-variables.tf - file with variables description with defult values  
-terraform.tfvars - values for variables described in variables.tf  
+Files to build infrastracture using terraform were created
+main.tf - file with discription of infrastructer consisting of one VM and one firewall rule
+variables.tf - file with variables description with defult values
+terraform.tfvars - values for variables described in variables.
 outputs.tf - file with output values description
 
 ##### Extra tasks
