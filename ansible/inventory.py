@@ -20,8 +20,8 @@ def main():
         "_meta": {}
     }
 
-    for gcloud_server_name, server_name, server_group in [('reddit-app', 'appserver', 'app'),
-                                                          ('reddit-db', 'dbserver', 'db')]:
+    for gcloud_server_name, server_group in [('reddit-app', 'app'),
+                                             ('reddit-db', 'db')]:
         cmd = [
             'gcloud', 'compute', 'instances', 'list', '--filter', 'name:( {} )'.format(gcloud_server_name)
         ]
