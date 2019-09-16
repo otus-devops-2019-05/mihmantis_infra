@@ -30,26 +30,15 @@ resource "google_compute_instance" "app" {
     private_key = "${file(var.private_key_path)}"
   }
 
-  provisioner "file" {
-    #source      = "${path.module}/files/puma.service"
-    content     = "${data.template_file.unit.rendered}"
-    destination = "/tmp/puma.service"
-  }
+#  provisioner "file" {
+#    content     = "${data.template_file.unit.rendered}"
+#    destination = "/tmp/puma.service"
+#  }
 
-  #  provisioner "file" {
-  #    source = "${path.module}/files/deploy.sh"
-  #    destination = "/tmp/deploy.sh"
-  #  }
+#  provisioner "remote-exec" {
+#    script = "${path.module}/files/deploy.sh"
+#  }
 
-  provisioner "remote-exec" {
-    script = "${path.module}/files/deploy.sh"
-  }
-
-  #provisioner "remote-exec" {
-  #  inline = [
-  #    "sed s/[Service]/[Service]\nDATABASE_URL=${var.database_url}/g /etc/systemd/system/puma.service"
-  #  ]
-  #}
 }
 
 data "template_file" "unit" {
