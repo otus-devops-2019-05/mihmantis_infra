@@ -1,6 +1,15 @@
 # mihmantis_infra
 mihmantis Infra repository
 
+### HW8
+
+Installed ansible. Created inventory and config files for two groups app and db.
+Created playbook for downloading git repository to app server.
+Because of idempotency of ansible git module, git task in playboook is completed with SUCCESS state both when reddit folder already present on app server and if it is not.
+
+##### Extra tasks
+[*] Created inventory.py script for dynamic inventory
+
 ### HW7
 
 Two environments (stage and prod) were created using terraform scripts.
