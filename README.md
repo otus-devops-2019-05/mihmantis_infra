@@ -1,6 +1,18 @@
 # mihmantis_infra
 mihmantis Infra repository
 
+### HW9
+
+Created ansible playbooks for deploying reddit-app
+- using single play
+- using several plays in one playbook
+- using multiple playbooks
+
+Changed packer provisioning to ansible scripts
+
+##### Extra tasks
+[*] Changed ansible inventory to dynamic inventory using inventory.py script with call to gcloud utility
+
 ### HW8
 
 Installed ansible. Created inventory and config files for two groups app and db.
