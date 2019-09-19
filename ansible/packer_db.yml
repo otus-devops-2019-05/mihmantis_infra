@@ -1,0 +1,21 @@
+---
+- name: Provisioner for db image
+  hosts: all
+  become: yes
+  tasks:
+    - name: Add mongodb repository
+      apt_repository:
+        filename: mongodb-org-4.2.list
+        repo: deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse
+
+    - name: Install mongodb
+      apt:
+        name: mongodb-org
+        state: present
+        allow_unauthenticated: yes
+
+    - name: Configure service supervisor
+      systemd:
+        name: mongod
+        enabled: yes
+
