@@ -7,3 +7,6 @@ variables.json
 *.tfvars
 .terraform/
 
+# ansible
+*.retry
+
