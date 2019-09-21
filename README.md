@@ -4,7 +4,8 @@ mihmantis Infra repository
 ### HW10
 
 Created ansible roles for app and db  
-Seperated enviroments in ansible into stage and prod  
+Separated enviroments in ansible into stage and prod  
+Used ansible role from ansble-galaxy to create nginx proxy
 Using ansible vault for sensitive information  
 
 ##### Extra tasks
