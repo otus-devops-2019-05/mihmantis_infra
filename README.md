@@ -1,6 +1,15 @@
 # mihmantis_infra
 mihmantis Infra repository
 
+### HW10
+
+Created ansible roles for app and db  
+Seperated enviroments in ansible into stage and prod  
+Using ansible vault for sensitive information  
+
+##### Extra tasks
+[*] Moved script for ansible dynamic inventory to stage and prod environments
+
 ### HW9
 
 Created ansible playbooks for deploying reddit-app
