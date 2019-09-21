@@ -30,19 +30,19 @@ resource "google_compute_instance" "app" {
     private_key = "${file(var.private_key_path)}"
   }
 
-#  provisioner "file" {
-#    content     = "${data.template_file.unit.rendered}"
-#    destination = "/tmp/puma.service"
-#  }
+  #  provisioner "file" {
+  #    content     = "${data.template_file.unit.rendered}"
+  #    destination = "/tmp/puma.service"
+  #  }
 
-#  provisioner "remote-exec" {
-#    script = "${path.module}/files/deploy.sh"
-#  }
-
+  #  provisioner "remote-exec" {
+  #    script = "${path.module}/files/deploy.sh"
+  #  }
 }
 
 data "template_file" "unit" {
   template = "${file("${path.module}/files/puma.service")}"
+
   vars = {
     database_url = "${var.database_url}"
   }
@@ -60,6 +60,20 @@ resource "google_compute_firewall" "firewall_puma" {
     protocol = "tcp"
 
     ports = ["9292"]
+  }
+
+  source_ranges = ["0.0.0.0/0"]
+  target_tags   = ["reddit-app"]
+}
+
+resource "google_compute_firewall" "firewall_nginx" {
+  name    = "allow-nginx-default"
+  network = "default"
+
+  allow {
+    protocol = "tcp"
+
+    ports = ["80"]
   }
 
   source_ranges = ["0.0.0.0/0"]
