@@ -12,3 +12,7 @@
     allow_unauthenticated: yes
   tags: install
 
+- name: enable mongod
+  service: name=mongod enabled=yes
+  tags: install
+

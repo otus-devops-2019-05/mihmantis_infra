@@ -2,10 +2,6 @@
 - name: Provisioner for app image
   hosts: all
   become: yes
-  tasks:
-    - name: Install ruby and bundler
-      apt:
-        name: ['ruby-full', 'ruby-bundler', 'build-essential']
-        state: present
-        update_cache: yes
+  roles:
+    - app
 
