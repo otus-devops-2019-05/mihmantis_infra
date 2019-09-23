@@ -3,7 +3,7 @@ mihmantis Infra repository
 
 ### HW11
 
-Created vagrantfile to deploy reddit-app on local machine (using virtualbox VM and ansible provisioning)
+Created vagrantfile to deploy reddit-app on local machine (using virtualbox VM and ansible provisioning)  
 Tests for db role using molecule (using Vagrant and virtualbox for VM and testinfra for tests)
 
 ##### Extra tasks
