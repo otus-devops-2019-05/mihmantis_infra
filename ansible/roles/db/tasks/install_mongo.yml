@@ -1,0 +1,18 @@
+---
+- name: Add mongodb repository
+  apt_repository:
+    filename: mongodb-org-4.2.list
+    repo: deb [ arch=amd64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse
+  tags: install
+
+- name: Install mongodb
+  apt:
+    name: mongodb-org
+    state: present
+    allow_unauthenticated: yes
+  tags: install
+
+- name: enable mongod
+  service: name=mongod enabled=yes
+  tags: install
+
